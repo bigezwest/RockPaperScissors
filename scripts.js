@@ -29,3 +29,19 @@ function getComputerChoice() {
     }
     return compChoice;
 }
+
+function getHumanChoice() {
+    let isValid = false;
+    let humanChoice = null;
+
+    while (!isValid) {
+        humanChoice = prompt("Enter rock, paper, or scissors");
+        if ((humanChoice === "rock") ||
+            (humanChoice === "paper") ||
+            (humanChoice === "scissors")) {
+                isValid = true;
+        }
+    }
+
+    return humanChoice;
+}
