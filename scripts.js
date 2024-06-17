@@ -85,7 +85,56 @@ function getHumanChoice() {
     representing the round winner, such as: “You lose! Paper beats Rock”.
 5. Increment the humanScore or computerScore variable based on the round winner.
  */
-function playRound(humanChoice, computerchoice) {
+function playRound(humanChoice, computerChoice) {
+    let statement = null;
 
-
+    if (humanChoice === "rock") {
+        switch (computerChoice) {
+            case "rock":
+                statement = "Tie Game.  No Winner."
+                break;
+            case "scissors":
+                statement = "You Win!  Rock beats scissors.";
+                humanScore += 1;
+                break;
+            case "paper":
+                statement = "You Lose.  Paper beats rock."
+                computerScore += 1;
+                break;
+        }
+    } else if (humanChoice === "paper") {
+        switch (computerChoice) {
+            case "rock":
+                statement = "You Win! Paper beats rock."
+                humanScore += 1;
+                break;
+            case "paper":
+                statement = "Tie Game.  No Winner.";
+                break;
+            case "scissors":
+                statement = "You lose.  Scissors beats paper."
+                computerScore += 1;
+                break;
+        }
+    } else if (humanChoice === "scissors") {
+        switch (computerChoice) {
+            case "rock":
+                statement = "You lose.  Rock beats scissors.";
+                computerScore += 1;
+                break;
+            case "paper":
+                statement = "You win! Scissors beats paper.";
+                humanScore += 1;
+                break;
+            case "scissors":
+                statement = "Tie Game.  No Winner.";
+                break;
+        }
+    }
+    console.log(statement);
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
