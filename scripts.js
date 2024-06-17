@@ -29,7 +29,14 @@ function getComputerChoice() {
     }
     return compChoice;
 }
+/**
+ *
+X - 1. Create a new function named getHumanChoice.
+X - 2. Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
+        Hint: Use the prompt method to get the user’s input.
+X - 3. Test what your function returns by using console.log.
 
+ */
 function getHumanChoice() {
     let isValid = false;
     let humanChoice = null;
