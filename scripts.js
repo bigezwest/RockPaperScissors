@@ -134,7 +134,26 @@ function playRound(humanChoice, computerChoice) {
     console.log(statement);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+/** playRound() ******************************************************************
+1. Create a new function named playGame.
+2. Move your playRound function and score variables so that they’re declared inside of the new playGame function
+3. Play 5 rounds by calling playRound 5 times.
+    Hint: When you assign a function call to a variable, the return value of that function is assigned to the variable. Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to recall the choice functions to get new choices for each round.
+    Re-work your previous functions or create more helper functions if necessary. Specifically, you may want to change the return values to something more useful.
+    If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
+ */
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+    console.log(`Human Score ${humanScore}`);
+    console.log(`Computer Score ${computerScore}`);
+    console.log("-----------------------");
+
+}
+
+for (let i = 0; i < 5; i++) {
+    playGame();
+}
