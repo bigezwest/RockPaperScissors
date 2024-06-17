@@ -11,5 +11,21 @@ function getComputerChoice() {
     const min = 1;
     const max = 4;
     const randNum = Math.floor(Math.random (min, max) * (max - min) + min);
-    return randNum;
+    let compChoice = null;
+
+    switch (randNum) {
+        case 1:
+            compChoice = "rock";
+            break;
+        case 2:
+            compChoice = "paper";
+            break;
+        case 3:
+            compChoice = "scissors";
+            break;
+        default:
+            compChoice = "An error has occurred."
+            break;
+    }
+    return compChoice;
 }
