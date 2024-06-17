@@ -1,6 +1,16 @@
 "use strict";
 
 /**
+ * Your game will keep track of the players score. You will write variables to keep track of the players score.
+ *
+ * X - 1. Create two new variables named humanScore and computerScore in the global scope.
+ * X - 2. Initialize those variables with the value of 0.
+*/
+let humanScore = 0;
+let computerScore = 0;
+
+
+/**
  * Instructions:
  *  X - 1. Create a new function named getComputerChoice.
     X - 2. Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”.
