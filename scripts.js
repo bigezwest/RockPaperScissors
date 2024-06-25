@@ -154,6 +154,6 @@ function playGame() {
 
 }
 
-for (let i = 0; i < 5; i++) {
-    playGame();
-}
+// for (let i = 0; i < 5; i++) {
+//     playGame();
+// }
