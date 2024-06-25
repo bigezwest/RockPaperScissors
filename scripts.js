@@ -165,12 +165,17 @@ const rockBtn = document.createElement("button");
 const paperBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
 
+// Add div for buttons
+const btnDiv = document.createElement("div");
+btnDiv.className = "btnDiv";
+
 // Add Text Content to buttons
 rockBtn.textContent = "Rock";
 paperBtn.textContent = "Paper";
 scissorsBtn.textContent = "Scissors";
 
-// Append buttons to body
-body.appendChild(rockBtn);
-body.appendChild(paperBtn);
-body.appendChild(scissorsBtn);
+// Append buttons and btnDiv to body
+body.appendChild(btnDiv);
+btnDiv.appendChild(rockBtn);
+btnDiv.appendChild(paperBtn);
+btnDiv.appendChild(scissorsBtn);
