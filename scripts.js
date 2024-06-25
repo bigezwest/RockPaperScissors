@@ -179,3 +179,11 @@ body.appendChild(btnDiv);
 btnDiv.appendChild(rockBtn);
 btnDiv.appendChild(paperBtn);
 btnDiv.appendChild(scissorsBtn);
+
+// Add an event for each button
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        alert(button.textContent);
+    });
+});
