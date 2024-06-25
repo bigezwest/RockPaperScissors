@@ -10,6 +10,7 @@
 */
 let humanScore = 0;
 let computerScore = 0;
+// let humanChoice = "";
 
 /** getComputerChoice() ********************************************************
 Your game will be played against the computer. You will write a function that
@@ -55,21 +56,28 @@ X - 2. Write the code so that getHumanChoice will return one of the valid
             Hint: Use the prompt method to get the user’s input.
 X - 3. Test what your function returns by using console.log.
 */
-function getHumanChoice() {
-    let isValid = false;
-    let humanChoice = null;
+// function getHumanChoice(humanChoiceInput) {
+    // let isValid = false;
+    // let humanChoice = humanChoiceInput;
 
-    while (!isValid) {
-        humanChoice = prompt("Enter rock, paper, or scissors").toLowerCase();
-        if ((humanChoice === "rock") ||
-            (humanChoice === "paper") ||
-            (humanChoice === "scissors")) {
-                isValid = true;
-        }
-    }
+    // // while (!isValid) {
+    //     const humanChoice = humanChoiceInput;
+    //     if ((humanChoice === "rock") ||
+    //         (humanChoice === "paper") ||
+    //         (humanChoice === "scissors")) {
+    //             isValid = true;
+    //     }
+    // }
+    //     humanChoice = prompt("Enter rock, paper, or scissors").toLowerCase();
+    //     if ((humanChoice === "rock") ||
+    //         (humanChoice === "paper") ||
+    //         (humanChoice === "scissors")) {
+    //             isValid = true;
+    //     }
+    // }
 
-    return humanChoice;
-}
+//     return humanChoice;
+// }
 
 /** playRound() ****************************************************************
  * Your game will be played round by round. You will write a function that takes
@@ -143,8 +151,9 @@ function playRound(humanChoice, computerChoice) {
     If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
  */
 
-function playGame() {
-    const humanSelection = getHumanChoice();
+function playGame(humanChoice) {
+    // const humanSelection = getHumanChoice();
+    const humanSelection = humanChoice;
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
@@ -184,6 +193,8 @@ btnDiv.appendChild(scissorsBtn);
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        alert(button.textContent);
+        const humanChoice = button.textContent.toLowerCase();
+        playGame(humanChoice);
+        // alert(button.textContent);
     });
 });
