@@ -160,3 +160,17 @@ function playGame() {
 
 // Select the body
 const body = document.querySelector("body");
+// create 3 buttons
+const rockBtn = document.createElement("button");
+const paperBtn = document.createElement("button");
+const scissorsBtn = document.createElement("button");
+
+// Add Text Content to buttons
+rockBtn.textContent = "Rock";
+paperBtn.textContent = "Paper";
+scissorsBtn.textContent = "Scissors";
+
+// Append buttons to body
+body.appendChild(rockBtn);
+body.appendChild(paperBtn);
+body.appendChild(scissorsBtn);
