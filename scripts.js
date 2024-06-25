@@ -157,3 +157,6 @@ function playGame() {
 // for (let i = 0; i < 5; i++) {
 //     playGame();
 // }
+
+// Select the body
+const body = document.querySelector("body");
