@@ -141,7 +141,7 @@ function playRound(humanChoice, computerChoice) {
         }
     }
     // Update the roundResultDiv to show the round results
-    roundResultDiv.textContent = statement + "\n";
+    roundResultDiv.textContent = statement;
 }
 
 /** playRound() ******************************************************************
@@ -160,11 +160,10 @@ function playGame(humanChoice) {
 
     playRound(humanSelection, computerSelection);
     showGameTotals();
-
 }
 /** showGameTotals ********************************************************** */
 function showGameTotals () {
-    const scoresP = document.createElement("p");
+
     scoresP.textContent = `
         Human Score: ${humanScore}
         Computer Score: ${computerScore}`;
@@ -172,18 +171,25 @@ function showGameTotals () {
     body.appendChild(roundResultDiv);
 }
 
-// Select the body
+// - body
 const body = document.querySelector("body");
-// create 3 buttons
+
+/** Create Elements  ******************************************************** */
+
+// - div to hold buttons
+const btnDiv = document.createElement("div");
+
+// - 3 buttons - user selections
 const rockBtn = document.createElement("button");
 const paperBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
-// Create a div to show the round results
+
+// - div to show the results of the current round
 const roundResultDiv = document.createElement("div");
 
+// - p to hold the scores of computer and human
+const scoresP = document.createElement("p");
 
-// Add div for buttons
-const btnDiv = document.createElement("div");
 btnDiv.className = "btnDiv";
 
 // Add Text Content to buttons
