@@ -94,6 +94,7 @@ X - 3. Test what your function returns by using console.log.
 5. Increment the humanScore or computerScore variable based on the round winner.
  */
 function playRound(humanChoice, computerChoice) {
+
     let statement = null;
 
     if (humanChoice === "rock") {
@@ -139,7 +140,9 @@ function playRound(humanChoice, computerChoice) {
                 break;
         }
     }
-    console.log(statement);
+    // Update the roundResultDiv to show the round results
+    roundResultDiv.textContent = statement + "\n";
+
 }
 
 /** playRound() ******************************************************************
@@ -157,9 +160,21 @@ function playGame(humanChoice) {
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
-    console.log(`Human Score ${humanScore}`);
-    console.log(`Computer Score ${computerScore}`);
-    console.log("-----------------------");
+    roundResultDiv.textContent += `
+        Human Score: ${humanScore}
+        Computer Score: ${computerScore}`;
+
+    // roundResultDiv.textContent += "human" + "\n" + "computer";
+    // console.log(roundResultDiv);
+    // roundResultDiv.textContent += "Human Score: " + humanScore + "\n"
+    //     + "Computer Score: " + computerScore + "\n";
+
+    body.appendChild(roundResultDiv);
+    // console.log(`
+    //     Human Score ${humanScore}
+    //     Computer Score ${computerScore}`);
+
+    // console.log("-----------------------");
 
 }
 
@@ -173,6 +188,8 @@ const body = document.querySelector("body");
 const rockBtn = document.createElement("button");
 const paperBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
+// Create a div to show the round results
+const roundResultDiv = document.createElement("div");
 
 // Add div for buttons
 const btnDiv = document.createElement("div");
