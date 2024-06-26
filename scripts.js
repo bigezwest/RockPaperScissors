@@ -163,12 +163,24 @@ function playGame(humanChoice) {
 }
 /** showGameTotals ********************************************************** */
 function showGameTotals () {
-
-    scoresP.textContent = `
-        Human Score: ${humanScore}
-        Computer Score: ${computerScore}`;
+    if (computerScore === 5) {
+        scoresP.textContent = `The computer wins!`;
+        resetValues();
+    } else if (humanScore === 5) {
+        scoresP.textContent = `The human wins!`;
+        resetValues();
+    } else {
+        scoresP.textContent = `
+            Human Score: ${humanScore}
+            Computer Score: ${computerScore}`;
+    }
     roundResultDiv.appendChild(scoresP);
     body.appendChild(roundResultDiv);
+}
+
+function resetValues() {
+    computerScore = 0;
+    humanScore = 0;
 }
 
 // - body
@@ -191,6 +203,7 @@ const roundResultDiv = document.createElement("div");
 const scoresP = document.createElement("p");
 
 btnDiv.className = "btnDiv";
+roundResultDiv.className = "resultsDiv";
 
 // Add Text Content to buttons
 rockBtn.textContent = "Rock";
