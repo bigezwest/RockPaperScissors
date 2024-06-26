@@ -159,13 +159,18 @@ function playGame(humanChoice) {
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
+    showGameTotals();
+
+}
+/** showGameTotals ********************************************************** */
+function showGameTotals () {
     const scoresP = document.createElement("p");
     scoresP.textContent = `
         Human Score: ${humanScore}
         Computer Score: ${computerScore}`;
     roundResultDiv.appendChild(scoresP);
     body.appendChild(roundResultDiv);
-    }
+}
 
 // Select the body
 const body = document.querySelector("body");
