@@ -142,7 +142,6 @@ function playRound(humanChoice, computerChoice) {
     }
     // Update the roundResultDiv to show the round results
     roundResultDiv.textContent = statement + "\n";
-
 }
 
 /** playRound() ******************************************************************
@@ -160,27 +159,13 @@ function playGame(humanChoice) {
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
-    roundResultDiv.textContent += `
+    const scoresP = document.createElement("p");
+    scoresP.textContent = `
         Human Score: ${humanScore}
         Computer Score: ${computerScore}`;
-
-    // roundResultDiv.textContent += "human" + "\n" + "computer";
-    // console.log(roundResultDiv);
-    // roundResultDiv.textContent += "Human Score: " + humanScore + "\n"
-    //     + "Computer Score: " + computerScore + "\n";
-
+    roundResultDiv.appendChild(scoresP);
     body.appendChild(roundResultDiv);
-    // console.log(`
-    //     Human Score ${humanScore}
-    //     Computer Score ${computerScore}`);
-
-    // console.log("-----------------------");
-
-}
-
-// for (let i = 0; i < 5; i++) {
-//     playGame();
-// }
+    }
 
 // Select the body
 const body = document.querySelector("body");
@@ -190,6 +175,7 @@ const paperBtn = document.createElement("button");
 const scissorsBtn = document.createElement("button");
 // Create a div to show the round results
 const roundResultDiv = document.createElement("div");
+
 
 // Add div for buttons
 const btnDiv = document.createElement("div");
